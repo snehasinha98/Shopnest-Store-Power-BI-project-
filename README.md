@@ -81,3 +81,13 @@ CALCULATE(
     COUNT(Orders[Order_ID]),
     Orders[Actual_Delivery_Date] > Orders[Estimated_Delivery_Date]
 )
+
+🔹 On-Time Delivery %
+On-Time Delivery % = 
+DIVIDE(
+    CALCULATE(
+        COUNT(Orders[Order_ID]),
+        Orders[Actual_Delivery_Date] <= Orders[Estimated_Delivery_Date]
+    ),
+    COUNT(Orders[Order_ID])
+)
